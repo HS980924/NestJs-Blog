@@ -5,11 +5,12 @@ import { BlogService } from './blog.service';
 // {서버 주소}/blog 이하의 요청을 처리한다는 뜻
 @Controller('blog')
 export class BlogController {
-    blogService: BlogService;
+    // blogService: BlogService;
 
-    constructor(){
-        this.blogService = new BlogService();
-    }
+    // constructor(){
+    //     this.blogService = new BlogService();
+    // }
+    constructor(private blogService: BlogService){}
 
     @Get()
     getAllPosts(){

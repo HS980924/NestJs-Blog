@@ -1,14 +1,22 @@
 import { PostDto } from './blog.model';
-
 import { BlogFileRepository, BlogRepository } from './blog.repository';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class BlogService {
     // posts = [];
-    blogRepository: BlogRepository;
+    // blogRepository: BlogRepository;
 
-    constructor(){
-        this.blogRepository = new BlogFileRepository();
-    }
+    // constructor(){
+    //     this.blogRepository = new BlogFileRepository();
+    // }
+    constructor(private blogRepository: BlogFileRepository) {}
+
+    // 위의 생성자와 같은 기능, 아래 코드는 풀어서 쓴 코드
+    // private blogRepository: BlogFileRepository;
+    // constructor(blogRepository: BlogFileRepository){
+    //     this.blogRepository = blogRepository;
+    // }
 
     // getAllPosts()는 컨트롤러의 함수와 이름을 동일하게 한 서비스 계층의 함수
     async getAllPosts(){
