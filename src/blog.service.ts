@@ -1,5 +1,5 @@
 import { PostDto } from './blog.model';
-import { BlogFileRepository, BlogRepository } from './blog.repository';
+import { BlogFileRepository, BlogRepository, BlogMongoRepository } from './blog.repository';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()
@@ -10,7 +10,7 @@ export class BlogService {
     // constructor(){
     //     this.blogRepository = new BlogFileRepository();
     // }
-    constructor(private blogRepository: BlogFileRepository) {}
+    constructor(private blogRepository: BlogMongoRepository) {}
 
     // 위의 생성자와 같은 기능, 아래 코드는 풀어서 쓴 코드
     // private blogRepository: BlogFileRepository;

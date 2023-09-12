@@ -21,7 +21,7 @@ GET {{server}}/blog/1
 DELETE {{server}}/blog/1
 
 ### 게시물 수정
-PUT {{server}}/blog/2
+PUT {{server}}/blog/65002593925fc029c01c6273
 content-Type : application/json
 
 {
